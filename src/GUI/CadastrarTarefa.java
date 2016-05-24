@@ -48,7 +48,7 @@ public class CadastrarTarefa extends JFrame{
     JButton btProx = new JButton("Proximo");
     
     public CadastrarTarefa() { //throws SQLException, ClassNotFoundException
-        setSize(400,300);
+        setSize(400,200);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle("Agenda De Tarefas");
         
@@ -83,6 +83,7 @@ public class CadastrarTarefa extends JFrame{
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         InterfaceTarefas interfaceTarefa = new InterfaceTarefas();
+                        dispose();
                     }
                 }
         );

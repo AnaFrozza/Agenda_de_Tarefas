@@ -42,7 +42,7 @@ public class CadastrarUsuario extends JFrame {
     JButton btProx = new JButton("Proximo");
     
     public CadastrarUsuario() { //throws SQLException, ClassNotFoundException
-        setSize(300,200);
+        setSize(300,150);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle("Agenda De Tarefas");
         
@@ -71,6 +71,7 @@ public class CadastrarUsuario extends JFrame {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         CadastrarTarefa CadTarefa = new CadastrarTarefa();
+                        dispose();
                     }
                 }
         );
