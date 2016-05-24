@@ -13,4 +13,5 @@ public class Tarefa {
     char tarefa;
     int dificuldade;
     int vezesSemana;
+    int vezesDia;
 }

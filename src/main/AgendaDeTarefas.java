@@ -8,6 +8,7 @@ package main;
 import agendadetarefas.Usuario;
 import agendadetarefas.Tarefa;
 import agendadetarefas.DividirTarefa;
+import GUI.CadastrarUsuario;
 /**
  *
  * @author Ana
@@ -22,6 +23,7 @@ public class AgendaDeTarefas {
         Usuario morador = new Usuario();
         Tarefa tarefa = new Tarefa();
         DividirTarefa ran = new DividirTarefa();
+        CadastrarUsuario cadMorador = new CadastrarUsuario();
     }
     
 }
