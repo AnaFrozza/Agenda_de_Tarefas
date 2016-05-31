@@ -11,5 +11,7 @@ package agendadetarefas;
  */
 public class Usuario {
     char nome;
+    int idade;
     
 }
+

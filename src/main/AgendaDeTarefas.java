@@ -5,10 +5,9 @@
  */
 package main;
 
-import agendadetarefas.Usuario;
-import agendadetarefas.Tarefa;
-import agendadetarefas.DividirTarefa;
+import GUI.CadastrarTarefa;
 import GUI.CadastrarUsuario;
+import GUI.InterfaceTarefa;
 /**
  *
  * @author Ana
@@ -19,11 +18,10 @@ public class AgendaDeTarefas {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Usuario morador = new Usuario();
-        Tarefa tarefa = new Tarefa();
-        DividirTarefa ran = new DividirTarefa();
-        CadastrarUsuario cadMorador = new CadastrarUsuario();
+                        
+        new CadastrarUsuario().setVisible(true);
+        new CadastrarTarefa().setVisible(true);
+        new InterfaceTarefa().setVisible(true);
     }
     
 }
