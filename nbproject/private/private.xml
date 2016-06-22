@@ -5,10 +5,12 @@
         <group>
             <file>file:/C:/Users/Ana/Downloads/AgendaDeTarefas/src/GUI/CadastrarUsuario.java</file>
             <file>file:/C:/Users/Ana/Downloads/AgendaDeTarefas/src/agendadetarefas/Usuario.java</file>
+            <file>file:/C:/Users/Ana/Downloads/AgendaDeTarefas/src/agendadetarefas/UsuarioDAO.java</file>
             <file>file:/C:/Users/Ana/Downloads/AgendaDeTarefas/src/GUI/CadastrarTarefa.java</file>
             <file>file:/C:/Users/Ana/Downloads/AgendaDeTarefas/src/agendadetarefas/Tarefa.java</file>
-            <file>file:/C:/Users/Ana/Downloads/AgendaDeTarefas/src/GUI/InterfaceTarefas.java</file>
+            <file>file:/C:/Users/Ana/Downloads/AgendaDeTarefas/src/GUI/InterfaceTarefa.java</file>
             <file>file:/C:/Users/Ana/Downloads/AgendaDeTarefas/src/main/AgendaDeTarefas.java</file>
+            <file>file:/C:/Users/Ana/Downloads/AgendaDeTarefas/src/conexaoBanco/conexaoMysql.java</file>
         </group>
     </open-files>
 </project-private>

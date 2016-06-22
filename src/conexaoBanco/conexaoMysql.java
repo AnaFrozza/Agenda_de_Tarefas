@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agendadetarefas;
+package conexaoBanco;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 
 /**
  *
  * @author Ana
  */
-public class Usuario {
-    
-    private String nome;
-    
-    public Usuario(String nome){
-        this.nome = nome;
-    }
-}
 
+public class conexaoMysql {
+    
+}
