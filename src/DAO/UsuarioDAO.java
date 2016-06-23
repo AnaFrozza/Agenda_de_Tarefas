@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import Model.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,24 +18,22 @@ import java.sql.ResultSet;
 //import agendadetarefas.Usuario;
 
 public class UsuarioDAO {
-    public void insert(){
+    public void insert(Usuario user){
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         
         try {
-            String sql = "Select * from morador";
+            String sql = "insert into morador (nome, idade) values(?, ?)";
             PreparedStatement stm = conexao.prepareStatement(sql);
             
-            ResultSet rs = stm.executeQuery();
-            while (rs.next()) {                
-                System.out.println(rs.getString("nome"));
-            }
+            stm.setString(1, user.getNome());
+            stm.setInt(2, user.getIdade());
+            
+            stm.execute();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             con.desconectar(conexao);
         }
     }
-    
-    
 }

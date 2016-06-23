@@ -20,8 +20,8 @@ public class AgendaDeTarefas {
     public static void main(String[] args) {
                         
         new CadastrarUsuario().setVisible(true);
-        new CadastrarTarefa().setVisible(true);
-        new InterfaceTarefa().setVisible(true);
+        //new CadastrarTarefa().setVisible(true);
+        //new InterfaceTarefa().setVisible(true);
     }
     
 }
