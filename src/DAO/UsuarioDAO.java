@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import GUI.CadastrarUsuario;
 import Model.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,6 +25,45 @@ public class UsuarioDAO {
         
         try {
             String sql = "insert into morador (nome, idade) values(?, ?)";
+            PreparedStatement stm = conexao.prepareStatement(sql);
+            
+            stm.setString(1, user.getNome());
+            stm.setInt(2, user.getIdade());
+            
+            stm.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            con.desconectar(conexao);
+        }
+        new CadastrarUsuario().setVisible(true);
+    }
+    
+    public void edit(Usuario user){
+        conexaoMysql con = new conexaoMysql();
+        Connection conexao = con.conectar();
+        
+        try {
+            String sql = "alter morador <?> <?>";
+            PreparedStatement stm = conexao.prepareStatement(sql);
+            
+            stm.setString(1, user.getNome());
+            stm.setInt(2, user.getIdade());
+            
+            stm.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            con.desconectar(conexao);
+        }
+    }
+    
+    public void excluir(Usuario user){
+        conexaoMysql con = new conexaoMysql();
+        Connection conexao = con.conectar();
+        
+        try {
+            String sql = "delete from morador";
             PreparedStatement stm = conexao.prepareStatement(sql);
             
             stm.setString(1, user.getNome());

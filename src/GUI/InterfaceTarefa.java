@@ -32,24 +32,24 @@ public class InterfaceTarefa extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jTabbedPane11 = new javax.swing.JTabbedPane();
+        editarMorador = new javax.swing.JButton();
+        editarTarefa = new javax.swing.JButton();
+        editar = new javax.swing.JButton();
+        campoTer = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        campoDom = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        campoSeg = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        campoQua = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
+        campoQui = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
+        camposex = new javax.swing.JTextArea();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTextArea7 = new javax.swing.JTextArea();
+        campoSab = new javax.swing.JTextArea();
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -76,53 +76,68 @@ public class InterfaceTarefa extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setText("Tarefas");
 
-        jButton4.setText("Editar Morador");
+        editarMorador.setText("Editar Morador");
+        editarMorador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarMoradorActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("Editar Tarefa");
+        editarTarefa.setText("Editar Tarefa");
+        editarTarefa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarTarefaActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("Editar");
+        editar.setText("Editar");
+        editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        campoDom.setColumns(20);
+        campoDom.setRows(5);
+        jScrollPane1.setViewportView(campoDom);
 
-        jTabbedPane11.addTab("Domingo", jScrollPane1);
+        campoTer.addTab("Domingo", jScrollPane1);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        campoSeg.setColumns(20);
+        campoSeg.setRows(5);
+        jScrollPane2.setViewportView(campoSeg);
 
-        jTabbedPane11.addTab("Segunda", jScrollPane2);
+        campoTer.addTab("Segunda", jScrollPane2);
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
 
-        jTabbedPane11.addTab("Terça", jScrollPane3);
+        campoTer.addTab("Terça", jScrollPane3);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane4.setViewportView(jTextArea4);
+        campoQua.setColumns(20);
+        campoQua.setRows(5);
+        jScrollPane4.setViewportView(campoQua);
 
-        jTabbedPane11.addTab("Quarta", jScrollPane4);
+        campoTer.addTab("Quarta", jScrollPane4);
 
-        jTextArea5.setColumns(20);
-        jTextArea5.setRows(5);
-        jScrollPane5.setViewportView(jTextArea5);
+        campoQui.setColumns(20);
+        campoQui.setRows(5);
+        jScrollPane5.setViewportView(campoQui);
 
-        jTabbedPane11.addTab("Quinta", jScrollPane5);
+        campoTer.addTab("Quinta", jScrollPane5);
 
-        jTextArea6.setColumns(20);
-        jTextArea6.setRows(5);
-        jScrollPane6.setViewportView(jTextArea6);
+        camposex.setColumns(20);
+        camposex.setRows(5);
+        jScrollPane6.setViewportView(camposex);
 
-        jTabbedPane11.addTab("Sexta", jScrollPane6);
+        campoTer.addTab("Sexta", jScrollPane6);
 
-        jTextArea7.setColumns(20);
-        jTextArea7.setRows(5);
-        jScrollPane7.setViewportView(jTextArea7);
+        campoSab.setColumns(20);
+        campoSab.setRows(5);
+        jScrollPane7.setViewportView(campoSab);
 
-        jTabbedPane11.addTab("Sabado", jScrollPane7);
+        campoTer.addTab("Sabado", jScrollPane7);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,17 +146,17 @@ public class InterfaceTarefa extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane11)
+                    .addComponent(campoTer)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
-                                .addComponent(jButton4)
+                                .addComponent(editarMorador)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton5)
+                                .addComponent(editarTarefa)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 38, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -151,17 +166,29 @@ public class InterfaceTarefa extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(campoTer, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(editarMorador)
+                    .addComponent(editarTarefa)
+                    .addComponent(editar))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarActionPerformed
+
+    private void editarTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTarefaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarTarefaActionPerformed
+
+    private void editarMoradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarMoradorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarMoradorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,9 +227,16 @@ public class InterfaceTarefa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JTextArea campoDom;
+    private javax.swing.JTextArea campoQua;
+    private javax.swing.JTextArea campoQui;
+    private javax.swing.JTextArea campoSab;
+    private javax.swing.JTextArea campoSeg;
+    private javax.swing.JTabbedPane campoTer;
+    private javax.swing.JTextArea camposex;
+    private javax.swing.JButton editar;
+    private javax.swing.JButton editarMorador;
+    private javax.swing.JButton editarTarefa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -214,15 +248,8 @@ public class InterfaceTarefa extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTabbedPane jTabbedPane11;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextArea jTextArea7;
     // End of variables declaration//GEN-END:variables
 }
 

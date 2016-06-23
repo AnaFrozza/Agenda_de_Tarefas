@@ -36,12 +36,15 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         campoNome = new javax.swing.JTextField();
         salvar = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        excluiMorar = new javax.swing.JButton();
+        EdiMorador = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         campoIdade = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaMorador = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(402, 321));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setText("Cadastrar Morador");
@@ -61,12 +64,17 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Excluir Morador");
-
-        jButton4.setText("Cadastrar Morador");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        excluiMorar.setText("Excluir Morador");
+        excluiMorar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                excluiMorarActionPerformed(evt);
+            }
+        });
+
+        EdiMorador.setText("Editar Morador");
+        EdiMorador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EdiMoradorActionPerformed(evt);
             }
         });
 
@@ -78,22 +86,31 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             }
         });
 
+        tabelaMorador.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nome", "Idade"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabelaMorador);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(31, 31, 31)
-                .addComponent(salvar)
-                .addGap(41, 41, 41))
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,6 +123,22 @@ public class CadastrarUsuario extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(excluiMorar)
+                                .addGap(42, 42, 42)
+                                .addComponent(EdiMorador)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,11 +153,13 @@ public class CadastrarUsuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(campoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(salvar)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(excluiMorar)
+                    .addComponent(EdiMorador))
                 .addContainerGap())
         );
 
@@ -135,9 +170,12 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNomeActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void EdiMoradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdiMoradorActionPerformed
+        int idade = Integer.parseInt(campoIdade.getText());
+        
+        Usuario modelUsuario = new Usuario(campoNome.getText(), idade);
+        dao.edit(modelUsuario);
+    }//GEN-LAST:event_EdiMoradorActionPerformed
 
     private void campoIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoIdadeActionPerformed
         // TODO add your handling code here:
@@ -154,6 +192,13 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         dao.insert(modelUsuario);
         
     }//GEN-LAST:event_salvarActionPerformed
+
+    private void excluiMorarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluiMorarActionPerformed
+        int idade = Integer.parseInt(campoIdade.getText());
+        
+        Usuario modelUsuario = new Usuario(campoNome.getText(), idade);
+        dao.excluir(modelUsuario);
+    }//GEN-LAST:event_excluiMorarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,13 +236,15 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton EdiMorador;
     private javax.swing.JTextField campoIdade;
     private javax.swing.JTextField campoNome;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton excluiMorar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton salvar;
+    private javax.swing.JTable tabelaMorador;
     // End of variables declaration//GEN-END:variables
 }
