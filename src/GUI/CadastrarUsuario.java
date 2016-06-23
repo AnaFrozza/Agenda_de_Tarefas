@@ -38,13 +38,13 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         salvar = new javax.swing.JButton();
         excluiMorar = new javax.swing.JButton();
         EdiMorador = new javax.swing.JButton();
+        cadastrarTarefa = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         campoIdade = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaMorador = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(402, 321));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setText("Cadastrar Morador");
@@ -57,7 +57,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             }
         });
 
-        salvar.setText("Salvar");
+        salvar.setText("Cadastrar Morador");
         salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salvarActionPerformed(evt);
@@ -78,13 +78,14 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Idade");
-
-        campoIdade.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarTarefa.setText("Proximo");
+        cadastrarTarefa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoIdadeActionPerformed(evt);
+                cadastrarTarefaActionPerformed(evt);
             }
         });
+
+        jLabel3.setText("Idade");
 
         tabelaMorador.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -112,55 +113,56 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(22, 22, 22)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(EdiMorador, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(28, 28, 28)
+                                    .addComponent(excluiMorar)
+                                    .addGap(31, 31, 31)
+                                    .addComponent(cadastrarTarefa))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(campoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(85, 85, 85)
+                                    .addComponent(salvar))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(campoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(excluiMorar)
-                                .addGap(42, 42, 42)
-                                .addComponent(EdiMorador)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(118, 118, 118)
+                        .addComponent(jLabel1)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(11, 11, 11)
                 .addComponent(jLabel1)
-                .addGap(28, 28, 28)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(campoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(salvar))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(campoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(salvar)
+                    .addComponent(EdiMorador)
                     .addComponent(excluiMorar)
-                    .addComponent(EdiMorador))
-                .addContainerGap())
+                    .addComponent(cadastrarTarefa))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -171,34 +173,34 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_campoNomeActionPerformed
 
     private void EdiMoradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdiMoradorActionPerformed
-        int idade = Integer.parseInt(campoIdade.getText());
-        
+        int idade = Integer.parseInt(campoIdade.getText());        
         Usuario modelUsuario = new Usuario(campoNome.getText(), idade);
         dao.edit(modelUsuario);
     }//GEN-LAST:event_EdiMoradorActionPerformed
 
-    private void campoIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoIdadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoIdadeActionPerformed
-
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
-        if(campoIdade.getText().length() == 0 || campoNome.getText().length() == 0){
+        if(campoNome.getText().length() == 0 || campoIdade.getText().length() == 0){
             JOptionPane.showMessageDialog(null, "Todos os campos são obrigatorios!");
             return;
         }
         int idade = Integer.parseInt(campoIdade.getText());
-        
-        Usuario modelUsuario = new Usuario(campoNome.getText(), idade);
+        Usuario modelUsuario = new Usuario(campoNome.getText(),idade);
         dao.insert(modelUsuario);
+        
+        campoNome.setText("");
+        campoIdade.setText("");
+        dispose();
         
     }//GEN-LAST:event_salvarActionPerformed
 
     private void excluiMorarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluiMorarActionPerformed
-        int idade = Integer.parseInt(campoIdade.getText());
-        
-        Usuario modelUsuario = new Usuario(campoNome.getText(), idade);
-        dao.excluir(modelUsuario);
+        new ExcluirMorador().setVisible(true);
     }//GEN-LAST:event_excluiMorarActionPerformed
+
+    private void cadastrarTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarTarefaActionPerformed
+        new CadastrarTarefa().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_cadastrarTarefaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,6 +239,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EdiMorador;
+    private javax.swing.JButton cadastrarTarefa;
     private javax.swing.JTextField campoIdade;
     private javax.swing.JTextField campoNome;
     private javax.swing.JButton excluiMorar;
