@@ -10,23 +10,23 @@ package Model;
  * @author Ana
  */
 public class Tarefa {
-    char tarefa;
+    String tarefa;
     int dificuldade;
     int vezesSemana;
     int vezesDia;
 
-    public Tarefa(char tarefa, int dificuldade, int vezesSemana, int vezesDia) {
+    public Tarefa(String tarefa, int dificuldade, int vezesSemana, int vezesDia) {
         this.tarefa = tarefa;
         this.dificuldade = dificuldade;
         this.vezesSemana = vezesSemana;
         this.vezesDia = vezesDia;
     }
 
-    public char getTarefa() {
+    public String getTarefa() {
         return tarefa;
     }
 
-    public void setTarefa(char tarefa) {
+    public void setTarefa(String tarefa) {
         this.tarefa = tarefa;
     }
 
