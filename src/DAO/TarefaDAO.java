@@ -5,8 +5,8 @@
  */
 package DAO;
 
+import GUI.CadastrarTarefa;
 import Model.Tarefa;
-import Model.Morador;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -22,8 +22,8 @@ public class TarefaDAO {
         Connection conexao = con.conectar();
         
         try {
-            String sql = "insert into tarefa (tarefa, dificuldade, vezesSemana, vezesDias) values(?, ?, ?, ?)";
-            PreparedStatement stm = conexao.prepareStatement(sql);
+            String insert = "insert into tarefa (tarefa, dificuldade, vezesSemana, vezesDia) values(?, ?, ?, ?)";
+            PreparedStatement stm = conexao.prepareStatement(insert);
             
             stm.setString(1, homework.getTarefa());
             stm.setInt(2, homework.getDificuldade());
@@ -36,16 +36,21 @@ public class TarefaDAO {
         } finally {
             con.desconectar(conexao);
         }
+        new CadastrarTarefa().setVisible(true);
     }
     
-    public void edit(Tarefa homework){
+    public void edit(Tarefa homework, String tarefa){
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         try{
-            String atualizar = "update tarefa set tarefa = ? where tarefa = ?";
-            PreparedStatement stm = conexao.prepareStatement(atualizar);
+            String edit = "update tarefa set tarefa = ?, dificuldade = ?, vezesSemana = ?, vezesDia = ? where tarefa = ?";
+            PreparedStatement stm = conexao.prepareStatement(edit);
             stm.setString(1, homework.getTarefa());
-            stm.setString(2, homework.getTarefa());
+            stm.setInt(2, homework.getDificuldade());
+            stm.setInt(3, homework.getVezesSemana());
+            stm.setInt(4, homework.getVezesDia());
+            stm.setString(5, tarefa);
+            
             stm.executeUpdate(); //executeUpdate devolve inteiro pra saber qtas linhas foram alteradas o execute nao devolve.
         } catch (SQLException e){
             e.printStackTrace();
@@ -55,15 +60,15 @@ public class TarefaDAO {
     }
     
     
-    public void excluir(Tarefa homework){
+    public void delet(String tarefa){
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         
         try {
-            String sql = "delete from tarefa where tarefa = ?";
-            PreparedStatement stm = conexao.prepareStatement(sql);
+            String delet = "delete from tarefa where tarefa = ?";
+            PreparedStatement stm = conexao.prepareStatement(delet);
             
-            stm.setString(1, homework.getTarefa());
+            stm.setString(1, tarefa);
             
             stm.execute();
         } catch (Exception e) {
@@ -71,6 +76,7 @@ public class TarefaDAO {
         } finally {
             con.desconectar(conexao);
         }
+        new CadastrarTarefa().setVisible(true);
     }  
     
 }

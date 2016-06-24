@@ -6,7 +6,6 @@
 package GUI;
 
 import DAO.MoradorDAO;
-import Model.Morador;
 import javax.swing.JOptionPane;
 
 /**
@@ -33,9 +32,7 @@ public class ExcluirMorador extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         campoNome = new javax.swing.JTextField();
-        campoIdade = new javax.swing.JTextField();
         excluir = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
 
@@ -46,15 +43,6 @@ public class ExcluirMorador extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Nome");
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Idade");
-
-        campoIdade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoIdadeActionPerformed(evt);
-            }
-        });
 
         excluir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         excluir.setText("Excluir");
@@ -76,10 +64,6 @@ public class ExcluirMorador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addComponent(cancelar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -93,10 +77,9 @@ public class ExcluirMorador extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(campoNome))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(campoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                .addGap(0, 45, Short.MAX_VALUE)
+                                .addComponent(cancelar)
+                                .addGap(65, 65, 65)
                                 .addComponent(excluir)))))
                 .addGap(64, 64, 64))
         );
@@ -109,34 +92,24 @@ public class ExcluirMorador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(campoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancelar)
                     .addComponent(excluir))
-                .addGap(18, 18, 18)
-                .addComponent(cancelar)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void campoIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoIdadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoIdadeActionPerformed
 
     private void excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirActionPerformed
         if(campoNome.getText().length() == 0){
             JOptionPane.showMessageDialog(null, "O campo Nome eh obrigatorio!");
             return;
         }
-        int idade = Integer.parseInt(campoIdade.getText());
-        Morador modelUsuario = new Morador(campoNome.getText(), idade);
-        dao.excluir(modelUsuario);
+        dao.delet(campoNome.getText());
         
         campoNome.setText("");
-        campoIdade.setText("");
         dispose();
     }//GEN-LAST:event_excluirActionPerformed
 
@@ -181,12 +154,10 @@ public class ExcluirMorador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField campoIdade;
     private javax.swing.JTextField campoNome;
     private javax.swing.JButton cancelar;
     private javax.swing.JButton excluir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,9 +8,7 @@ package DAO;
 import GUI.CadastrarMorador;
 import Model.Morador;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -45,8 +43,8 @@ public class MoradorDAO {
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         try{
-            String sql = "update morador set nome = ?, idade = ? where nome = ?";
-            PreparedStatement stm = conexao.prepareStatement(sql);
+            String edit = "update morador set nome = ?, idade = ? where nome = ?";
+            PreparedStatement stm = conexao.prepareStatement(edit);
             stm.setString(1, user.getNome());
             stm.setInt(2, user.getIdade());
             stm.setString(3, nome);
@@ -60,15 +58,15 @@ public class MoradorDAO {
         }
     }
     
-    public void excluir(Morador user){
+    public void delet(String nome){
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         
         try {
-            String sql = "delete from morador where nome = ?";
-            PreparedStatement stm = conexao.prepareStatement(sql);
+            String delet = "delete from morador where nome = ?";
+            PreparedStatement stm = conexao.prepareStatement(delet);
             
-            stm.setString(1, user.getNome());
+            stm.setString(1, nome);
             
             stm.execute();
         } catch (Exception e) {

@@ -49,15 +49,19 @@ public class CadastrarTarefa extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe Script", 0, 24)); // NOI18N
         jLabel1.setText("Cadastrar Tarefa");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Tarefa");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Dificuldade");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Vezes por Semana");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Vezes por Dia");
 
         campoTarefa.addActionListener(new java.awt.event.ActionListener() {
@@ -66,6 +70,7 @@ public class CadastrarTarefa extends javax.swing.JFrame {
             }
         });
 
+        salvar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         salvar.setText("Cadastrar Tarefa");
         salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,8 +78,15 @@ public class CadastrarTarefa extends javax.swing.JFrame {
             }
         });
 
+        excluirTarefa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         excluirTarefa.setText("Excluir Tarefa");
+        excluirTarefa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirTarefaActionPerformed(evt);
+            }
+        });
 
+        editarTarefa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         editarTarefa.setText("Editar Tarefa");
         editarTarefa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +116,7 @@ public class CadastrarTarefa extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelaTarefa);
 
+        divisao.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         divisao.setText("Proximo");
         divisao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,8 +131,17 @@ public class CadastrarTarefa extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1))
+                        .addGap(34, 34, 34)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(excluirTarefa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(editarTarefa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(salvar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(divisao))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -135,31 +157,21 @@ public class CadastrarTarefa extends javax.swing.JFrame {
                                 .addGap(50, 50, 50)
                                 .addComponent(jLabel2)))
                         .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campoDia, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(campoSem)
-                            .addComponent(campoDificuldade)
-                            .addComponent(campoTarefa)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(excluirTarefa)
-                                .addGap(26, 26, 26)
-                                .addComponent(editarTarefa)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(salvar)
-                                .addGap(18, 18, 18)
-                                .addComponent(divisao)))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(campoDia, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                                .addComponent(campoSem)
+                                .addComponent(campoDificuldade)
+                                .addComponent(campoTarefa)))))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(campoTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -177,13 +189,18 @@ public class CadastrarTarefa extends javax.swing.JFrame {
                     .addComponent(campoDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(salvar)
-                    .addComponent(excluirTarefa)
-                    .addComponent(editarTarefa)
-                    .addComponent(divisao))
-                .addGap(25, 25, 25))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(salvar)
+                            .addComponent(editarTarefa)
+                            .addComponent(divisao))
+                        .addGap(25, 25, 25))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(excluirTarefa)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -194,12 +211,8 @@ public class CadastrarTarefa extends javax.swing.JFrame {
     }//GEN-LAST:event_campoTarefaActionPerformed
 
     private void editarTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTarefaActionPerformed
-        int dificuldade = Integer.parseInt(campoDificuldade.getText());
-        int vezesSemana = Integer.parseInt(campoSem.getText());
-        int vezesDia = Integer.parseInt(campoDia.getText());
-        
-        Tarefa modelTarefa = new Tarefa(campoTarefa.getText(), dificuldade, vezesSemana, vezesDia);
-        dao.edit(modelTarefa);
+        new EditarTarefa().setVisible(true);
+        dispose();
     }//GEN-LAST:event_editarTarefaActionPerformed
 
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
@@ -219,12 +232,19 @@ public class CadastrarTarefa extends javax.swing.JFrame {
         campoSem.setText("");
         campoDia.setText("");
         
+        dispose();
+        
     }//GEN-LAST:event_salvarActionPerformed
 
     private void divisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisaoActionPerformed
         new InterfaceTarefa().setVisible(true);
         dispose();
     }//GEN-LAST:event_divisaoActionPerformed
+
+    private void excluirTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirTarefaActionPerformed
+        new ExcluirTarefas().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_excluirTarefaActionPerformed
 
     /**
      * @param args the command line arguments
