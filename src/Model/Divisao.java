@@ -9,11 +9,12 @@ package Model;
  *
  * @author Ana
  */
-public class DividirTarefa {
+public class Divisao {
+
     private String nome;
     private String tarefa;
     
-    public DividirTarefa(String nome, String tarefa, Integer vezesSemana, Integer vezesDia) {
+    public Divisao(String nome, String tarefa) {
         this.nome = nome;
         this.tarefa = tarefa;
     }

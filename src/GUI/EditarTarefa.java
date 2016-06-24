@@ -60,7 +60,7 @@ public class EditarTarefa extends javax.swing.JFrame {
         jLabel4.setText("Dificuldade");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("VezesSemana");
+        jLabel5.setText("DiasSemana");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("VezesDia");

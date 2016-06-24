@@ -5,19 +5,20 @@
  */
 package main;
 
-import GUI.Main;
+import GUI.MainInterface;
+
 /**
  *
  * @author Ana
  */
-public class AgendaDeTarefas {
+public class Main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
                         
-        new Main().setVisible(true);
+        new MainInterface().setVisible(true);
     
     }
     

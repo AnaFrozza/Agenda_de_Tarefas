@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Ana
  */
-public class Main extends javax.swing.JFrame {
+public class MainInterface extends javax.swing.JFrame {
 
     /**
      * Creates new form Main
      */
-    public Main() {
+    public MainInterface() {
         initComponents();
     }
 
@@ -105,7 +105,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastrarTarefaActionPerformed
 
     private void divisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisaoActionPerformed
-        new InterfaceTarefa().setVisible(true);
+        new Divisao().setVisible(true);
         dispose();
     }//GEN-LAST:event_divisaoActionPerformed
 
@@ -126,20 +126,21 @@ public class Main extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main().setVisible(true);
+                new MainInterface().setVisible(true);
             }
         });
     }
