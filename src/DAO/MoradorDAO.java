@@ -5,27 +5,29 @@
  */
 package DAO;
 
-import GUI.CadastrarUsuario;
-import Model.Usuario;
+import GUI.CadastrarMorador;
+import Model.Morador;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
  * @author Ana
  */
 
-//import agendadetarefas.Usuario;
+//import agendadetarefas.Morador;
 
-public class UsuarioDAO {
-    public void insert(Usuario user){
+public class MoradorDAO {
+    public void insert(Morador user){
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         
         try {
-            String sql = "insert into morador (nome, idade) values(?, ?)";
-            PreparedStatement stm = conexao.prepareStatement(sql);
+            String insert = "insert into morador (nome, idade) values(?,?)";
+            PreparedStatement stm = conexao.prepareStatement(insert);
             
             stm.setString(1, user.getNome());
             stm.setInt(2, user.getIdade());
@@ -36,38 +38,37 @@ public class UsuarioDAO {
         } finally {
             con.desconectar(conexao);
         }
-        new CadastrarUsuario().setVisible(true);
+        new CadastrarMorador().setVisible(true);
     }
     
-    public void edit(Usuario user){
+    public void edit(Morador user, String nome){
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
-        
-        try {
-            String sql = "alter morador <?> <?>";
+        try{
+            String sql = "update morador set nome = ?, idade = ? where nome = ?";
             PreparedStatement stm = conexao.prepareStatement(sql);
-            
             stm.setString(1, user.getNome());
             stm.setInt(2, user.getIdade());
+            stm.setString(3, nome);
+            System.out.println(user.getNome());
+            stm.executeUpdate();
             
-            stm.execute();
-        } catch (Exception e) {
+        } catch (SQLException e){
             e.printStackTrace();
         } finally {
             con.desconectar(conexao);
         }
     }
     
-    public void excluir(Usuario user){
+    public void excluir(Morador user){
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         
         try {
-            String sql = "delete from morador";
+            String sql = "delete from morador where nome = ?";
             PreparedStatement stm = conexao.prepareStatement(sql);
             
             stm.setString(1, user.getNome());
-            stm.setInt(2, user.getIdade());
             
             stm.execute();
         } catch (Exception e) {
@@ -75,5 +76,6 @@ public class UsuarioDAO {
         } finally {
             con.desconectar(conexao);
         }
+        new CadastrarMorador().setVisible(true);
     }
 }

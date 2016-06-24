@@ -9,16 +9,28 @@ package Model;
  *
  * @author Ana
  */
-public class Usuario {
+public class Morador {
     
     private String nome;
-    private int idade;
+    private Integer idade;
 
-    public Usuario(String nome, int idade) {
+    public Morador(String nome, int idade) {
         this.nome = nome;
         this.idade = idade;
     }
 
+    public Object[] obterDados(){
+        return new Object[]{nome, idade};
+    }
+    
+    public Integer getIdade() {
+        return idade;
+    }
+
+    public void setIdade(Integer idade) {
+        this.idade = idade;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -26,15 +38,6 @@ public class Usuario {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-    
     
 }
 

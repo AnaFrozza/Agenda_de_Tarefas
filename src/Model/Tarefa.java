@@ -21,6 +21,10 @@ public class Tarefa {
         this.vezesSemana = vezesSemana;
         this.vezesDia = vezesDia;
     }
+    
+    public Object[] obterDados(){
+        return new Object[]{tarefa, dificuldade, vezesSemana, vezesDia};
+    }
 
     public String getTarefa() {
         return tarefa;
