@@ -34,22 +34,22 @@ public class Divisao extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         editarMorador = new javax.swing.JButton();
         editarTarefa = new javax.swing.JButton();
-        editar = new javax.swing.JButton();
+        gerar = new javax.swing.JButton();
         campoTer = new javax.swing.JTabbedPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        campoDom = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        campoSeg = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        campoQua = new javax.swing.JTextArea();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        campoQui = new javax.swing.JTextArea();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        camposex = new javax.swing.JTextArea();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        campoSab = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tableDom = new javax.swing.JTable();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        tableSeg = new javax.swing.JTable();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        tableTer = new javax.swing.JTable();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        tableQua = new javax.swing.JTable();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        tableQui = new javax.swing.JTable();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        tableSex = new javax.swing.JTable();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        tableSab = new javax.swing.JTable();
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,57 +92,211 @@ public class Divisao extends javax.swing.JFrame {
             }
         });
 
-        editar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        editar.setText("Editar");
-        editar.addActionListener(new java.awt.event.ActionListener() {
+        gerar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        gerar.setText("Gerar");
+        gerar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editarActionPerformed(evt);
+                gerarActionPerformed(evt);
             }
         });
 
         campoTer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        campoDom.setColumns(20);
-        campoDom.setRows(5);
-        jScrollPane1.setViewportView(campoDom);
+        tableDom.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nome", "Tarefa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
 
-        campoTer.addTab("Domingo", jScrollPane1);
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane8.setViewportView(tableDom);
 
-        campoSeg.setColumns(20);
-        campoSeg.setRows(5);
-        jScrollPane2.setViewportView(campoSeg);
+        campoTer.addTab("Domingo", jScrollPane8);
 
-        campoTer.addTab("Segunda", jScrollPane2);
+        tableSeg.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nome", "Tarefa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        campoTer.addTab("Terça", jScrollPane3);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane11.setViewportView(tableSeg);
 
-        campoQua.setColumns(20);
-        campoQua.setRows(5);
-        jScrollPane4.setViewportView(campoQua);
+        campoTer.addTab("Segunda", jScrollPane11);
 
-        campoTer.addTab("Quarta", jScrollPane4);
+        tableTer.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nome", "Tarefa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
 
-        campoQui.setColumns(20);
-        campoQui.setRows(5);
-        jScrollPane5.setViewportView(campoQui);
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane12.setViewportView(tableTer);
 
-        campoTer.addTab("Quinta", jScrollPane5);
+        campoTer.addTab("Terça", jScrollPane12);
 
-        camposex.setColumns(20);
-        camposex.setRows(5);
-        jScrollPane6.setViewportView(camposex);
+        tableQua.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nome", "Tarefa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
 
-        campoTer.addTab("Sexta", jScrollPane6);
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        campoSab.setColumns(20);
-        campoSab.setRows(5);
-        jScrollPane7.setViewportView(campoSab);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane13.setViewportView(tableQua);
 
-        campoTer.addTab("Sabado", jScrollPane7);
+        campoTer.addTab("Quarta", jScrollPane13);
+
+        tableQui.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nome", "Tarefa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane14.setViewportView(tableQui);
+
+        campoTer.addTab("Quinta", jScrollPane14);
+
+        tableSex.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nome", "Tarefa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane15.setViewportView(tableSex);
+
+        campoTer.addTab("Sexta", jScrollPane15);
+
+        tableSab.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nome", "Tarefa"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane16.setViewportView(tableSab);
+
+        campoTer.addTab("Sabado", jScrollPane16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -154,7 +308,7 @@ public class Divisao extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(editarTarefa)
                 .addGap(42, 42, 42)
-                .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(gerar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,22 +325,22 @@ public class Divisao extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(3, 3, 3)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campoTer, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editarMorador)
                     .addComponent(editarTarefa)
-                    .addComponent(editar))
+                    .addComponent(gerar))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
+    private void gerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarActionPerformed
          
-    }//GEN-LAST:event_editarActionPerformed
+    }//GEN-LAST:event_gerarActionPerformed
 
     private void editarTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTarefaActionPerformed
         new CadastrarTarefa().setVisible(true);
@@ -237,29 +391,29 @@ public class Divisao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea campoDom;
-    private javax.swing.JTextArea campoQua;
-    private javax.swing.JTextArea campoQui;
-    private javax.swing.JTextArea campoSab;
-    private javax.swing.JTextArea campoSeg;
     private javax.swing.JTabbedPane campoTer;
-    private javax.swing.JTextArea camposex;
-    private javax.swing.JButton editar;
     private javax.swing.JButton editarMorador;
     private javax.swing.JButton editarTarefa;
+    private javax.swing.JButton gerar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList jList1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTable tableDom;
+    private javax.swing.JTable tableQua;
+    private javax.swing.JTable tableQui;
+    private javax.swing.JTable tableSab;
+    private javax.swing.JTable tableSeg;
+    private javax.swing.JTable tableSex;
+    private javax.swing.JTable tableTer;
     // End of variables declaration//GEN-END:variables
 }
 

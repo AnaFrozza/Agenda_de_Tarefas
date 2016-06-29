@@ -20,30 +20,18 @@ import java.util.List;
  */
 
 public class DivisaoDAO {
-    
-    
-     public List<Divisao> consultarTodos() {
-        List<Divisao> dividir = new ArrayList();
-        
+    public void gerar(Divisao star){
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         
-        try{
+        try {
+            String gerar = "";
+            PreparedStatement stm = conexao.prepareStatement(gerar);
             
-            String consult = "select * from divisao order by entrada";
-        
-            PreparedStatement stm = conexao.prepareStatement(consult);
-            ResultSet rs = stm.executeQuery();
-            while (rs.next()){
-                Divisao div = new Divisao(rs.getString("nome"), rs.getString("tarefa"));
-                
-                dividir.add(div);
-            }
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } finally {
+        }finally {
             con.desconectar(conexao);
         }
-        return dividir;
     }
 }

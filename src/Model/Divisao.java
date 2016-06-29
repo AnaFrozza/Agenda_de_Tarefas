@@ -9,6 +9,10 @@ package Model;
  *
  * @author Ana
  */
+
+import Model.Tarefa;
+import Model.Morador;
+
 public class Divisao {
 
     private String nome;

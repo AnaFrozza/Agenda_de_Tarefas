@@ -11,8 +11,8 @@ package Model;
  */
 public class Morador {
     
-    private String nome;
-    private Integer idade;
+    public String nome;
+    public Integer idade;
 
     public Morador(String nome, int idade) {
         this.nome = nome;
