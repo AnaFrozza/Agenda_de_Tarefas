@@ -23,6 +23,9 @@ public class Divisao {
         this.tarefa = tarefa;
     }
 
+    public Object[] obterDados(){
+        return new Object[]{nome, tarefa};
+    }
 
     public String getNome() {
         return nome;

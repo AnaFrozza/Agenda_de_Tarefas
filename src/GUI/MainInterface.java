@@ -105,7 +105,7 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastrarTarefaActionPerformed
 
     private void divisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisaoActionPerformed
-        new Divisao().setVisible(true);
+        new DivisaoInterface().setVisible(true);
         dispose();
     }//GEN-LAST:event_divisaoActionPerformed
 

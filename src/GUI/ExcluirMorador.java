@@ -114,7 +114,6 @@ public class ExcluirMorador extends javax.swing.JFrame {
     }//GEN-LAST:event_excluirActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        new CadastrarMorador().setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelarActionPerformed
 

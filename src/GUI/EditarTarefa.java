@@ -175,7 +175,7 @@ public class EditarTarefa extends javax.swing.JFrame {
     }//GEN-LAST:event_novaSemActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        new CadastrarTarefa().setVisible(true);
+       dispose();
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarActionPerformed
@@ -191,7 +191,7 @@ public class EditarTarefa extends javax.swing.JFrame {
         Tarefa modelTarefa = new Tarefa(novaTarefa.getText(), dificuldade, vezesSemana, vezesDia);
         dao.edit(modelTarefa, campoTarefa.getText());
        
-        new CadastrarTarefa().setVisible(true);
+        
         dispose();
     }//GEN-LAST:event_EditarActionPerformed
 

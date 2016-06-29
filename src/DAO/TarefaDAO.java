@@ -36,7 +36,7 @@ public class TarefaDAO {
         } finally {
             con.desconectar(conexao);
         }
-        new CadastrarTarefa().setVisible(true);
+        
     }
     
     public void edit(Tarefa homework, String tarefa){
@@ -76,7 +76,7 @@ public class TarefaDAO {
         } finally {
             con.desconectar(conexao);
         }
-        new CadastrarTarefa().setVisible(true);
+        
     }  
     
 }

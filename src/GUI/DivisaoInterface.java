@@ -5,16 +5,24 @@
  */
 package GUI;
 
+
+import DAO.DivisaoDAO;
+import Model.Divisao;
+import Model.Morador;
+import Model.Tarefa;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Ana
  */
-public class Divisao extends javax.swing.JFrame {
-
+public class DivisaoInterface extends javax.swing.JFrame {
+    DivisaoDAO daoDiv = new DivisaoDAO();
     /**
      * Creates new form teste
      */
-    public Divisao() {
+    public DivisaoInterface() {
         initComponents();
     }
 
@@ -119,6 +127,20 @@ public class Divisao extends javax.swing.JFrame {
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        tableDom.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tableDomAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        tableDom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableDomMouseClicked(evt);
             }
         });
         jScrollPane8.setViewportView(tableDom);
@@ -339,7 +361,7 @@ public class Divisao extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void gerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarActionPerformed
-         
+        daoDiv.insert();
     }//GEN-LAST:event_gerarActionPerformed
 
     private void editarTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTarefaActionPerformed
@@ -351,6 +373,14 @@ public class Divisao extends javax.swing.JFrame {
         new CadastrarMorador().setVisible(true);
         dispose();
     }//GEN-LAST:event_editarMoradorActionPerformed
+
+    private void tableDomAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tableDomAncestorAdded
+        
+    }//GEN-LAST:event_tableDomAncestorAdded
+
+    private void tableDomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDomMouseClicked
+        
+    }//GEN-LAST:event_tableDomMouseClicked
 
     /**
      * @param args the command line arguments
@@ -369,14 +399,18 @@ public class Divisao extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Divisao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DivisaoInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Divisao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DivisaoInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Divisao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DivisaoInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Divisao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DivisaoInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -385,7 +419,7 @@ public class Divisao extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Divisao().setVisible(true);
+                new DivisaoInterface().setVisible(true);
             }
         });
     }
@@ -415,6 +449,7 @@ public class Divisao extends javax.swing.JFrame {
     private javax.swing.JTable tableSex;
     private javax.swing.JTable tableTer;
     // End of variables declaration//GEN-END:variables
+
 }
 
 

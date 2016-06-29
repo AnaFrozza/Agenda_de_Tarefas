@@ -164,7 +164,6 @@ public class AjudaTarefa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarActionPerformed
-        new CadastrarTarefa().setVisible(true);
         dispose();
     }//GEN-LAST:event_VoltarActionPerformed
 

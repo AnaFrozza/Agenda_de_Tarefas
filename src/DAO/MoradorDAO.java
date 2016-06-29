@@ -36,7 +36,7 @@ public class MoradorDAO {
         } finally {
             con.desconectar(conexao);
         }
-        new CadastrarMorador().setVisible(true);
+        
     }
     
     public void edit(Morador user, String nome){
@@ -74,6 +74,6 @@ public class MoradorDAO {
         } finally {
             con.desconectar(conexao);
         }
-        new CadastrarMorador().setVisible(true);
+        
     }
 }

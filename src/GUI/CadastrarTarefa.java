@@ -5,9 +5,11 @@
  */
 package GUI;
 
+import DAO.DivisaoDAO;
 import DAO.TarefaDAO;
 import Model.Tarefa;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,6 +17,8 @@ import javax.swing.JOptionPane;
  */
 public class CadastrarTarefa extends javax.swing.JFrame {
     TarefaDAO dao = new TarefaDAO();
+    DivisaoDAO daoDiv = new DivisaoDAO();
+    
     /**
      * Creates new form CadastrarTarefa
      */
@@ -226,7 +230,6 @@ public class CadastrarTarefa extends javax.swing.JFrame {
 
     private void editarTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTarefaActionPerformed
         new EditarTarefa().setVisible(true);
-        dispose();
     }//GEN-LAST:event_editarTarefaActionPerformed
 
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
@@ -240,29 +243,30 @@ public class CadastrarTarefa extends javax.swing.JFrame {
         
         Tarefa modelTarefa = new Tarefa(campoTarefa.getText(), dificuldade, vezesSemana, vezesDia);
         dao.insert(modelTarefa);
+        daoDiv.insertTarefa(campoTarefa.getText());
         
+        DefaultTableModel tableModel = (DefaultTableModel)tabelaTarefa.getModel();
+        tableModel.addRow(modelTarefa.obterDados());
+      
         campoTarefa.setText("");
         campoDificuldade.setText("");
         campoSem.setText("");
         campoDia.setText("");
-        
-        dispose();
-        
+       
+              
     }//GEN-LAST:event_salvarActionPerformed
 
     private void divisaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisaoActionPerformed
-        new Divisao().setVisible(true);
+        new DivisaoInterface().setVisible(true);
         dispose();
     }//GEN-LAST:event_divisaoActionPerformed
 
     private void excluirTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirTarefaActionPerformed
-        new ExcluirTarefas().setVisible(true);
-        dispose();
+         new ExcluirTarefas().setVisible(true);
     }//GEN-LAST:event_excluirTarefaActionPerformed
 
     private void AjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AjudaActionPerformed
         new AjudaTarefa().setVisible(true);
-        dispose();
     }//GEN-LAST:event_AjudaActionPerformed
 
     /**

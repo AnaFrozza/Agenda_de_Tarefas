@@ -6,6 +6,7 @@
 package GUI;
 
 import DAO.MoradorDAO;
+import DAO.DivisaoDAO;
 import Model.Morador;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -16,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CadastrarMorador extends javax.swing.JFrame {
     MoradorDAO dao = new MoradorDAO();
+    DivisaoDAO daoDiv = new DivisaoDAO();
     /**
      * Creates new form CadastrarUsuario
      */
@@ -208,21 +210,20 @@ public class CadastrarMorador extends javax.swing.JFrame {
         }
              
         int idade = Integer.parseInt(campoIdade.getText());
-        Morador modelUsuario = new Morador(campoNome.getText(), idade);
-        dao.insert(modelUsuario);
+        Morador modelMorador = new Morador(campoNome.getText(), idade);
+        dao.insert(modelMorador);
+        daoDiv.insertNome(campoNome.getText());
         
         DefaultTableModel tableModel = (DefaultTableModel)tabelaMorador.getModel();
-        tableModel.addRow(modelUsuario.obterDados());
-        
+        tableModel.addRow(modelMorador.obterDados());
+       
         campoNome.setText("");
         campoIdade.setText("");
-        dispose();
         
     }//GEN-LAST:event_salvarActionPerformed
 
     private void excluirMoradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirMoradorActionPerformed
         new ExcluirMorador().setVisible(true);
-        dispose();
     }//GEN-LAST:event_excluirMoradorActionPerformed
 
     private void cadastrarTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarTarefaActionPerformed
@@ -283,4 +284,5 @@ public class CadastrarMorador extends javax.swing.JFrame {
     private javax.swing.JButton salvar;
     private javax.swing.JTable tabelaMorador;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -142,13 +142,11 @@ public class EditarMorador extends javax.swing.JFrame {
         Morador modelUsuario = new Morador(nomeNovo.getText(), idade);
         dao.edit(modelUsuario, campoNome.getText());
        
-        new CadastrarMorador().setVisible(true);
         dispose();
         
     }//GEN-LAST:event_salvarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        new CadastrarMorador().setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelarActionPerformed
 

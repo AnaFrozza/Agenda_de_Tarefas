@@ -126,7 +126,6 @@ public class ExcluirTarefas extends javax.swing.JFrame {
     }//GEN-LAST:event_excluirActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        new CadastrarTarefa().setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelarActionPerformed
 
