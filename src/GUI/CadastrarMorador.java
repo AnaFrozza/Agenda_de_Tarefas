@@ -197,7 +197,6 @@ public class CadastrarMorador extends javax.swing.JFrame {
 
     private void EditarMoradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarMoradorActionPerformed
         new EditarMorador().setVisible(true);
-        dispose();
     }//GEN-LAST:event_EditarMoradorActionPerformed
 
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed

@@ -43,7 +43,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
         editarMorador = new javax.swing.JButton();
         editarTarefa = new javax.swing.JButton();
         gerar = new javax.swing.JButton();
-        campoTer = new javax.swing.JTabbedPane();
+        tableDivisao = new javax.swing.JTabbedPane();
         jScrollPane8 = new javax.swing.JScrollPane();
         tableDom = new javax.swing.JTable();
         jScrollPane11 = new javax.swing.JScrollPane();
@@ -108,7 +108,12 @@ public class DivisaoInterface extends javax.swing.JFrame {
             }
         });
 
-        campoTer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        tableDivisao.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        tableDivisao.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableDivisaoMouseClicked(evt);
+            }
+        });
 
         tableDom.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -142,7 +147,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(tableDom);
 
-        campoTer.addTab("Domingo", jScrollPane8);
+        tableDivisao.addTab("Domingo", jScrollPane8);
 
         tableSeg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -169,7 +174,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
         });
         jScrollPane11.setViewportView(tableSeg);
 
-        campoTer.addTab("Segunda", jScrollPane11);
+        tableDivisao.addTab("Segunda", jScrollPane11);
 
         tableTer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -189,7 +194,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
         });
         jScrollPane12.setViewportView(tableTer);
 
-        campoTer.addTab("Terça", jScrollPane12);
+        tableDivisao.addTab("Terça", jScrollPane12);
 
         tableQua.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -216,7 +221,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
         });
         jScrollPane13.setViewportView(tableQua);
 
-        campoTer.addTab("Quarta", jScrollPane13);
+        tableDivisao.addTab("Quarta", jScrollPane13);
 
         tableQui.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -243,7 +248,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
         });
         jScrollPane14.setViewportView(tableQui);
 
-        campoTer.addTab("Quinta", jScrollPane14);
+        tableDivisao.addTab("Quinta", jScrollPane14);
 
         tableSex.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -270,7 +275,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
         });
         jScrollPane15.setViewportView(tableSex);
 
-        campoTer.addTab("Sexta", jScrollPane15);
+        tableDivisao.addTab("Sexta", jScrollPane15);
 
         tableSab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -295,9 +300,14 @@ public class DivisaoInterface extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tableSab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableSabMouseClicked(evt);
+            }
+        });
         jScrollPane16.setViewportView(tableSab);
 
-        campoTer.addTab("Sabado", jScrollPane16);
+        tableDivisao.addTab("Sabado", jScrollPane16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -318,7 +328,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(campoTer, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tableDivisao, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -327,7 +337,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
                 .addGap(3, 3, 3)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(campoTer, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tableDivisao, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editarMorador)
@@ -340,7 +350,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void gerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarActionPerformed
-        daoDiv.insert();
+        
     }//GEN-LAST:event_gerarActionPerformed
 
     private void editarTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTarefaActionPerformed
@@ -360,6 +370,14 @@ public class DivisaoInterface extends javax.swing.JFrame {
     private void tableDomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDomMouseClicked
         
     }//GEN-LAST:event_tableDomMouseClicked
+
+    private void tableSabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableSabMouseClicked
+       
+    }//GEN-LAST:event_tableSabMouseClicked
+
+    private void tableDivisaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDivisaoMouseClicked
+         daoDiv.insertSab();
+    }//GEN-LAST:event_tableDivisaoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -404,7 +422,6 @@ public class DivisaoInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane campoTer;
     private javax.swing.JButton editarMorador;
     private javax.swing.JButton editarTarefa;
     private javax.swing.JButton gerar;
@@ -420,6 +437,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTabbedPane tableDivisao;
     private javax.swing.JTable tableDom;
     private javax.swing.JTable tableQua;
     private javax.swing.JTable tableQui;

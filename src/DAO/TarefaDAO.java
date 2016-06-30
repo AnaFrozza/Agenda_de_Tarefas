@@ -17,7 +17,7 @@ import java.sql.SQLException;
  */
 public class TarefaDAO {
     
-    public void insert(Tarefa homework){
+    public void insert(Tarefa task){
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         
@@ -25,8 +25,8 @@ public class TarefaDAO {
             String insert = "insert into tarefa (tarefa, vezesSemana) values(?, ?)";
             PreparedStatement stm = conexao.prepareStatement(insert);
             
-            stm.setString(1, homework.getTarefa());
-            stm.setInt(2, homework.getVezesSemana());
+            stm.setString(1, task.getTarefa());
+            stm.setInt(2, task.getVezesSemana());
             
             
             stm.execute();
@@ -38,17 +38,17 @@ public class TarefaDAO {
         
     }
     
-    public void edit(Tarefa homework, String tarefa){
+    public void edit(Tarefa task, String tarefa){
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         try{
             String edit = "update tarefa set tarefa = ?, vezesSemana = ? where tarefa = ?";
             PreparedStatement stm = conexao.prepareStatement(edit);
-            stm.setString(1, homework.getTarefa());
-            stm.setInt(2, homework.getVezesSemana());
+            stm.setString(1, task.getTarefa());
+            stm.setInt(2, task.getVezesSemana());
             stm.setString(3, tarefa);
             
-            stm.executeUpdate(); //executeUpdate devolve inteiro pra saber qtas linhas foram alteradas o execute nao devolve.
+            stm.executeUpdate(); 
         } catch (SQLException e){
             e.printStackTrace();
         } finally {

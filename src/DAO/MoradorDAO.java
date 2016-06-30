@@ -52,7 +52,7 @@ public class MoradorDAO {
             stm.setString(1, user.getNome());
             stm.setInt(2, user.getIdade());
             stm.setString(3, nome);
-            System.out.println(user.getNome());
+            
             stm.executeUpdate();
             
         } catch (SQLException e){
@@ -67,12 +67,20 @@ public class MoradorDAO {
         Connection conexao = con.conectar();
         
         try {
+            
+            String delet1 = "delete from divisao where nome = ?";
+            PreparedStatement vtm = conexao.prepareStatement(delet1);
+            vtm.setString(1, nome);
+            
+            vtm.execute();
+            
             String delet = "delete from morador where nome = ?";
             PreparedStatement stm = conexao.prepareStatement(delet);
             
             stm.setString(1, nome);
             
             stm.execute();
+            
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
