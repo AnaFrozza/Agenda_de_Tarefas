@@ -11,35 +11,25 @@ package Model;
  */
 public class Tarefa {
     String tarefa;
-    int dificuldade;
     int vezesSemana;
-    int vezesDia;
 
-    public Tarefa(String tarefa, int dificuldade, int vezesSemana, int vezesDia) {
+
+    public Tarefa(String tarefa, int vezesSemana) {
         this.tarefa = tarefa;
-        this.dificuldade = dificuldade;
         this.vezesSemana = vezesSemana;
-        this.vezesDia = vezesDia;
+    
     }
     
     public Object[] obterDados(){
-        return new Object[]{tarefa, dificuldade, vezesSemana, vezesDia};
+        return new Object[]{tarefa, vezesSemana};
     }
-
+    
     public String getTarefa() {
         return tarefa;
     }
 
     public void setTarefa(String tarefa) {
         this.tarefa = tarefa;
-    }
-
-    public int getDificuldade() {
-        return dificuldade;
-    }
-
-    public void setDificuldade(int dificuldade) {
-        this.dificuldade = dificuldade;
     }
 
     public int getVezesSemana() {
@@ -49,14 +39,5 @@ public class Tarefa {
     public void setVezesSemana(int vezesSemana) {
         this.vezesSemana = vezesSemana;
     }
-
-    public int getVezesDia() {
-        return vezesDia;
-    }
-
-    public void setVezesDia(int vezesDia) {
-        this.vezesDia = vezesDia;
-    }
-    
     
 }

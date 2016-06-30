@@ -9,6 +9,7 @@ import Model.Divisao;
 import GUI.DivisaoInterface;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import javax.sound.midi.Soundbank;
 
 /**
  *
@@ -23,6 +24,7 @@ public class DivisaoDAO {
     
     public void insertNome(String name){
         nome = name;
+        
     }
     
     public void insertTarefa(String task){
@@ -33,6 +35,7 @@ public class DivisaoDAO {
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         
+        System.out.println(nome);
         try {
             String insert = "insert into divisao (nome, tarefa) values(?,?)";
             PreparedStatement stm = conexao.prepareStatement(insert);

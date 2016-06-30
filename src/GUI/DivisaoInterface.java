@@ -112,10 +112,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
 
         tableDom.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome", "Tarefa"
@@ -149,10 +146,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
 
         tableSeg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome", "Tarefa"
@@ -179,10 +173,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
 
         tableTer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome", "Tarefa"
@@ -202,10 +193,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
 
         tableQua.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome", "Tarefa"
@@ -232,10 +220,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
 
         tableQui.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome", "Tarefa"
@@ -262,10 +247,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
 
         tableSex.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome", "Tarefa"
@@ -292,10 +274,7 @@ public class DivisaoInterface extends javax.swing.JFrame {
 
         tableSab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome", "Tarefa"

@@ -25,10 +25,8 @@ DROP TABLE IF EXISTS `tarefa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tarefa` (
-  `tarefa` varchar(10) NOT NULL DEFAULT '',
-  `dificuldade` int(11) DEFAULT NULL,
+  `tarefa` varchar(45) NOT NULL DEFAULT '',
   `vezesSemana` int(11) DEFAULT NULL,
-  `vezesDia` int(11) DEFAULT NULL,
   PRIMARY KEY (`tarefa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -39,6 +37,7 @@ CREATE TABLE `tarefa` (
 
 LOCK TABLES `tarefa` WRITE;
 /*!40000 ALTER TABLE `tarefa` DISABLE KEYS */;
+INSERT INTO `tarefa` VALUES ('Lavar Louça',0);
 /*!40000 ALTER TABLE `tarefa` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-22 20:06:32
+-- Dump completed on 2016-06-30  2:34:43

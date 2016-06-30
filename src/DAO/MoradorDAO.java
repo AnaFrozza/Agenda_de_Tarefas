@@ -7,9 +7,13 @@ package DAO;
 
 import GUI.CadastrarMorador;
 import Model.Morador;
+import java.awt.List;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -76,4 +80,36 @@ public class MoradorDAO {
         }
         
     }
+    
+    /**
+     *
+     * @return
+     *//*
+    public List<Morador> consultarTodos() {
+        List<Morador> user = new ArrayList();
+        conexaoMysql con = new conexaoMysql();
+        Connection conexao = con.conectar();
+        
+        try{
+            String consult = "select * from valet order by entrada";
+            PreparedStatement stm = conexao.prepareStatement(consult);
+            
+            ResultSet rs = stm.executeQuery();
+            
+            while (rs.next()){    
+                Morador morador;
+                morador = new Morador(
+                        rs.getString("nome"),
+                        rs.getInt("idade")
+                );
+                
+                user.add(morador);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            con.desconectar(conexao);
+        }
+        return user;
+    }*/
 }

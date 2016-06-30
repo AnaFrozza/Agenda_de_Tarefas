@@ -25,12 +25,12 @@ DROP TABLE IF EXISTS `divisao`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `divisao` (
-  `nome` varchar(10) NOT NULL DEFAULT '',
-  `tarefa` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`nome`),
+  `nome` varchar(45) NOT NULL DEFAULT '',
+  `tarefa` varchar(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`nome`,`tarefa`),
   KEY `tarefa` (`tarefa`),
   CONSTRAINT `divisao_ibfk_1` FOREIGN KEY (`nome`) REFERENCES `morador` (`nome`),
-  CONSTRAINT `divisao_ibfk_2` FOREIGN KEY (`tarefa`) REFERENCES `tarefa` (`tarefa`)
+  CONSTRAINT `divisao_ibfk_2` FOREIGN KEY (`tarefa`) REFERENCES `tarefa` (`tarefa`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,6 +40,7 @@ CREATE TABLE `divisao` (
 
 LOCK TABLES `divisao` WRITE;
 /*!40000 ALTER TABLE `divisao` DISABLE KEYS */;
+INSERT INTO `divisao` VALUES ('Ana','Lavar Louça');
 /*!40000 ALTER TABLE `divisao` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-22 20:06:31
+-- Dump completed on 2016-06-30  2:34:43

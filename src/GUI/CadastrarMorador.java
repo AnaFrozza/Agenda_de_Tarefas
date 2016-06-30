@@ -99,10 +99,7 @@ public class CadastrarMorador extends javax.swing.JFrame {
         tabelaMorador.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tabelaMorador.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Nome", "Idade"

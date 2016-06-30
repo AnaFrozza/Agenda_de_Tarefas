@@ -22,13 +22,12 @@ public class TarefaDAO {
         Connection conexao = con.conectar();
         
         try {
-            String insert = "insert into tarefa (tarefa, dificuldade, vezesSemana, vezesDia) values(?, ?, ?, ?)";
+            String insert = "insert into tarefa (tarefa, vezesSemana) values(?, ?)";
             PreparedStatement stm = conexao.prepareStatement(insert);
             
             stm.setString(1, homework.getTarefa());
-            stm.setInt(2, homework.getDificuldade());
-            stm.setInt(3, homework.getVezesSemana());
-            stm.setInt(4, homework.getVezesDia());
+            stm.setInt(2, homework.getVezesSemana());
+            
             
             stm.execute();
         } catch (Exception e) {
@@ -43,13 +42,11 @@ public class TarefaDAO {
         conexaoMysql con = new conexaoMysql();
         Connection conexao = con.conectar();
         try{
-            String edit = "update tarefa set tarefa = ?, dificuldade = ?, vezesSemana = ?, vezesDia = ? where tarefa = ?";
+            String edit = "update tarefa set tarefa = ?, vezesSemana = ? where tarefa = ?";
             PreparedStatement stm = conexao.prepareStatement(edit);
             stm.setString(1, homework.getTarefa());
-            stm.setInt(2, homework.getDificuldade());
-            stm.setInt(3, homework.getVezesSemana());
-            stm.setInt(4, homework.getVezesDia());
-            stm.setString(5, tarefa);
+            stm.setInt(2, homework.getVezesSemana());
+            stm.setString(3, tarefa);
             
             stm.executeUpdate(); //executeUpdate devolve inteiro pra saber qtas linhas foram alteradas o execute nao devolve.
         } catch (SQLException e){

@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `morador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `morador` (
-  `nome` varchar(10) NOT NULL DEFAULT '',
+  `nome` varchar(45) NOT NULL DEFAULT '',
   `idade` int(11) DEFAULT NULL,
   PRIMARY KEY (`nome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -37,6 +37,7 @@ CREATE TABLE `morador` (
 
 LOCK TABLES `morador` WRITE;
 /*!40000 ALTER TABLE `morador` DISABLE KEYS */;
+INSERT INTO `morador` VALUES ('Ana',22);
 /*!40000 ALTER TABLE `morador` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-22 20:06:31
+-- Dump completed on 2016-06-30  2:34:43
